@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="indexStyleSheet.css" rel="stylesheet" />
+    <title>American Dream</title>
+</head>
+<body>
+     <!-- Header -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="byeboredom.webp" width="40" height="40" />
+            <strong>ByeByeBoredom</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-center">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul id="nav-options" class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="/American Dream.html">American Dream</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-item nav-link" href="https://www.centralparknyc.org/">Central Park</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link" href="https://spyscape.com/">Spyscape</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- Header ends -->
+    <div id="vueAttraction">
+        <h3>Choose How Many People Will Join the Activity</h3>
+        <br />
+        <span @click="one" class="amountChoice">1</span>
+        <span @click="two" class="amountChoice">2</span>
+        <span @click="three" class="amountChoice">3</span>
+        <span @click="four" class="amountChoice">4</span>
+        <span @click="five" class="amountChoice">5</span>
+        <span @click="six" class="amountChoice">6</span>
+        <br />
+        <br />
+        <br />
+        <attraction v-show="peopleAmount >= 3 && peopleAmount <=6" name="DreamWorks Water Park" :peoplemax="6" :peoplemin="3" description="Fun for the whole family!"></attraction>
+        <attraction v-show="peopleAmount >= 1 && peopleAmount <=3" name="Mini Golf" :peoplemax="3" :peoplemin="1" description="Great for a date or a fun time!"></attraction>
+        <attraction v-show="peopleAmount >= 2 && peopleAmount <=4" name="Ice Skating" :peoplemax="4" :peoplemin="2" description="Thrilling and fun for your whole group!"></attraction>
+    </div>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+        <section class="">
+          <div class="container text-center text-md-start mt-5">
+            <div class="text-center">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold mb-4">Brought to you by Rachel Brisman, Tziporah Werzberger and Jacob Berger</h6>
+            </div>
+          </div>
+  
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+          © 2021 Copyright:
+          <a class="text-reset fw-bold">ByeByeBoredom</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="AmericanDreamJS.js"></script>
+    
+</body>
+</html>
