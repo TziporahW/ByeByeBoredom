@@ -69,3 +69,17 @@ fieldset {
 .app .button {
   left: 30px;
 }
+
+#logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#people-spinner{
+  width: 50px;
+}
+
+.widget{
+  text-align: center;
+}
