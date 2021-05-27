@@ -66,24 +66,31 @@
                 <fieldset>
                     <legend>Book a Reservation</legend>
                     <div class="controlgroup-vertical">
-                        <input type="radio" id="member" name="membership">
+                        <input v-model="memberStatus" type="radio" value="member" id="member" name="membership">
                         <label for="member">Member</label>
                     
-                        <input type="radio" id="non-member" name="membership">
+                        <input v-model="memberStatus" type="radio" value="non-member" id="non-member" name="membership">
                         <label for="non-member">Non-Member</label> <br>
                         <label>Activity:</label>
-                        <select>
-                            <option v-for="activity in activities" :key="activity.name" v-model="activitySelected"> {{ activity.name }} </option>
+                        <select id="myDropdown" @change="onchange($event)" v-model="activitySelected">  
+                            <option v-for="activity in activities" :key="activity.id" :selected="activitySelected == activity"  value="activity.name"> {{ activity.name }} </option>
+                            <option value="" disabled selected>Please Select an Option</option>
                         </select><br>
                         <label for="people"># of people</label>
                         <input type="number" id="people" v-model.number="peopleAmount">
 
-                        <p>Date: <input type="text" id="datepicker"></p>
+                        <p>Date: <input type="text" v-model="dateSelected" id="datepicker"></p>
         
-                        <button id="book">Book</button>
+                        <button id="book" >Book</button>
+
+                        <span>people: {{ peopleAmount }}</span><br>
+                        <span>membership: {{ memberStatus }}</span><br>
+                        <span>Date Selected: {{ dateSelected }}</span><br>
+                        <span>Activity Selected: {{ activitySelected }}</span>
         
                         <div id="dialog" title="Reservation Confirmation" style="display:none">
-                            <p>You just reserved</p>
+                            <p>You just reserved {{activitySelected}} for {{peopleAmount}} people.</p>
+                            <p>The cost is {{cost}}</p>
                         </div>
                     </div>
                 </fieldset>

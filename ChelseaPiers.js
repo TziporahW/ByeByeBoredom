@@ -9,11 +9,29 @@ var app = new Vue({
             { id: 5, name: "Fitness", price: 10 },
             { id: 6, name: "Yoga", price: 30 },
         ],
-        activitySelected: 0,
+        activitySelected: "",
         peopleAmount: 0,
+        memberStatus: "",
+        dateSelected: ""
     },
-    compute:{
-        cost(){
+    computed:{
+
+    },
+    methods:{
+
+        onChange: function(event){
+            this.activitySelected = event.target.value;
+            console.log(event.target.value);
+         },
+        isMember: function(){
+            if(memberStatus === "member"){
+                return true;
+            }else{
+                return false;
+            }
+        },
+        cost: function(){
+            //change to call this.isMember()
             if(isMember){
                 var total = peopleAmount * activity.price;
                 var discount = .2 * total;
@@ -32,6 +50,7 @@ var app = new Vue({
 $(document).ready( function(){
     $( "#datepicker" ).datepicker();
     $( ".controlgroup-vertical" ).controlgroup({"direction":"vertical"});
+    document.getElementById("myDropdown").selectedIndex = 0;
 
     $("#book").click( function(){
         $("#dialog").dialog({
@@ -41,7 +60,8 @@ $(document).ready( function(){
                 duration: 1000
             },
             buttons: {
-                "Delete all items": function() {
+                "Confirm": function() {
+                    // add functionality that adds the order to some array ordersConfirmed
                   $( this ).dialog( "close" );
                 },
                 Cancel: function() {
