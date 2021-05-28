@@ -60,9 +60,10 @@ $(document).ready( function(){
                 duration: 1000
             },
             buttons: {
-                "Confirm": function() {
+                "Ok": function() {
                     // add functionality that adds the order to some array ordersConfirmed
                   $( this ).dialog( "close" );
+                  $( ".controlgroup-vertical" ).controlgroup("refresh");
                 },
                 Cancel: function() {
                   $( this ).dialog( "close" );
