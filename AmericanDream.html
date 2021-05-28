@@ -1,18 +1,17 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous" />
     <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="indexStyleSheet.css" rel="stylesheet" />
@@ -21,150 +20,87 @@
   <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="byeboredom.webp" width="40" height="40" />
-          <strong>ByeByeBoredom</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="byeboredom.webp" width="40" height="40" />
+                <strong>ByeByeBoredom</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="ContactUs.html">Contact Us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Places To Go
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="AmericanDream.html">American Dream</a>
-                <a class="dropdown-item" href="CentralPark.html">Central Park</a>
-                <a class="dropdown-item" href="ChelseaPiers.html">Chelsea Piers</a>
-              </div>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Places To Go
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="AmericanDream.html">American Dream</a>
+                            <a class="dropdown-item" href="CentralPark.html">Central Park</a>
+                            <a class="dropdown-item" href="ChelseaPiers.html">Chelsea Piers</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <!-- Header ends -->
     <br />
-    <h6 style="text-align: center">
-      American Dream is located in New Jersey, just a heartbeat away from New York City.
-    </h6>
-    <h6 style="text-align: center">
-      Feel the excitement of making memories again at the newest place for indoor family entertainment.
-    </h6>
+    <h6 style="text-align: center;">American Dream is located in New Jersey, just a heartbeat away from New York City.</h6>
+    <h6 style="text-align: center;">Feel the excitement of making memories again at the newest place for indoor family entertainment.</h6>
 
     <div id="vueAttraction">
-      <h3>Choose How Many People Will Join the Activity</h3>
-      <br />
-      <span @click="one" class="amountChoice" :class="{ clickedspan: oneclicked }">1</span>
-      <span @click="two" class="amountChoice" :class="{ clickedspan: twoclicked }">2</span>
-      <span @click="three" class="amountChoice" :class="{ clickedspan: threeclicked }">3</span>
-      <span @click="four" class="amountChoice" :class="{ clickedspan: fourclicked }">4</span>
-      <span @click="five" class="amountChoice" :class="{ clickedspan: fiveclicked }">5</span>
-      <span @click="six" class="amountChoice" :class="{ clickedspan: sixclicked }">6</span>
-      <br />
-      <br />
-      <span>Water Park Hits: {{wphits}}&nbsp &nbsp</span>
-      <span>Ice Skating Hits: {{ishits}}&nbsp &nbsp</span>
-      <span>Mini Golf Hits: {{mghits}}&nbsp &nbsp</span>
-      <span>Big Snow Hits: {{sshits}}&nbsp &nbsp</span>
-      <br />
-      <br />
-      <attraction
-        v-show="peopleAmount >= 3 && peopleAmount <=6"
-        name="DreamWorks Water Park"
-        :peoplemax="6"
-        :peoplemin="3"
-        description="Fun for the whole family!"
-        @addfaves="addhits1"
-      ></attraction>
-      <attraction
-        v-show="peopleAmount >= 1 && peopleAmount <=3"
-        name="Mini Golf"
-        :peoplemax="3"
-        :peoplemin="1"
-        description="Great for a date or a fun time!"
-        @addfaves="addhits3"
-      ></attraction>
-      <attraction
-        v-show="peopleAmount >= 2 && peopleAmount <=4"
-        name="Ice Skating"
-        :peoplemax="6"
-        :peoplemin="2"
-        description="Thrilling and fun for your whole group!"
-        @addfaves="addhits2"
-      ></attraction>
-      <attraction
-        v-show="peopleAmount >= 1 && peopleAmount <=5"
-        name="Big Snow Ski Slop"
-        :peoplemax="5"
-        :peoplemin="1"
-        description="The Skiing thrill all year long!"
-        @addfaves="addhits4"
-      ></attraction>
-
-      <div class="floatme">
-        <label for="fave">Which was your favorite?</label>
-        <select v-model="selected" id="name">
-          <option disabled value="">----</option>
-          <option>DreamWorks Water Park</option>
-          <option>Mini Golf</option>
-          <option>Ice Skating</option>
-          <option>Big Snow Ski Slope</option>
-        </select>
+        <h3>Choose How Many People Will Join the Activity</h3>
         <br />
-        <span>Your favorite is: {{ selected }}</span>
-      </div>
+        <span @click="one" class="amountChoice" :class="{ clickedspan: oneclicked }">1</span>
+        <span @click="two" class="amountChoice" :class="{ clickedspan: twoclicked }">2</span>
+        <span @click="three" class="amountChoice" :class="{ clickedspan: threeclicked }">3</span>
+        <span @click="four" class="amountChoice" :class="{ clickedspan: fourclicked }">4</span>
+        <span @click="five" class="amountChoice" :class="{ clickedspan: fiveclicked }">5</span>
+        <span @click="six" class="amountChoice" :class="{ clickedspan: sixclicked }">6</span>
+        <br />
+        <br />
+        <span>Water Park Hits: {{wphits}}&nbsp &nbsp</span><span>Ice Skating Hits: {{ishits}}&nbsp &nbsp</span><span>Mini Golf Hits: {{mghits}}&nbsp &nbsp</span><span>Big Snow Hits: {{sshits}}&nbsp &nbsp</span>
+        <br />
+        <br />
+        <attraction v-show="peopleAmount >= 3 && peopleAmount <=6" name="DreamWorks Water Park" :peoplemax="6" :peoplemin="3" description="Fun for the whole family!" @addfaves="addhits1"></attraction>
+        <attraction v-show="peopleAmount >= 1 && peopleAmount <=3" name="Mini Golf" :peoplemax="3" :peoplemin="1" description="Great for a date or a fun time!" @addfaves="addhits3"></attraction>
+        <attraction v-show="peopleAmount >= 2 && peopleAmount <=4" name="Ice Skating" :peoplemax="6" :peoplemin="2" description="Thrilling and fun for your whole group!" @addfaves="addhits2"></attraction>
+        <attraction v-show="peopleAmount >= 1 && peopleAmount <=5" name="Big Snow Ski Slop" :peoplemax="5" :peoplemin="1" description="The Skiing thrill all year long!" @addfaves="addhits4"></attraction>
+
+        <div class="floatme">
+            <label for="fave">Which was your favorite?</label>
+            <select v-model="selected" id="name">
+                <option disabled value="">----</option>
+                <option>DreamWorks Water Park</option>
+                <option>Mini Golf</option>
+                <option>Ice Skating</option>
+                <option>Big Snow Ski Slope</option>
+            </select>
+            <br />
+            <span>Your favorite is: {{ selected }}</span>
+        </div>
     </div>
     <!-- Footer -->
     <footer class="text-center fixed-bottom text-lg-start bg-light text-muted">
-      <!-- Copyright -->
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold">ByeByeBoredom</a>
-      </div>
-      <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold">ByeByeBoredom</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
     <script src="AmericanDream.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>

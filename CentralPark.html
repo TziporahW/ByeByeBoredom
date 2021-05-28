@@ -1,184 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+          crossorigin="anonymous" />
     <link href="indexStyleSheet.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
     <script src="CentralPark.js"></script>
     <title>ByeByeBoredom!</title>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img src="byeboredom.webp" width="40" height="40" />
-          <strong>ByeByeBoredom</strong>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="byeboredom.webp" width="40" height="40" />
+                <strong>ByeByeBoredom</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="ContactUs.html">Contact Us</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Places To Go
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="AmericanDream.html">American Dream</a>
-                <a class="dropdown-item" href="CentralPark.html">Central Park</a>
-                <a class="dropdown-item" href="ChelseaPiers.html">Chelsea Piers</a>
-              </div>
-            </li>
-          </ul>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ContactUs.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Places To Go
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="AmericanDream.html">American Dream</a>
+                            <a class="dropdown-item" href="CentralPark.html">Central Park</a>
+                            <a class="dropdown-item" href="ChelseaPiers.html">Chelsea Piers</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
     <!-- Header ends -->
     <div class="container">
-      <h4 style="text-align: center">Central Park is New York City’s 843-acre backyard.</h4>
-      <h6 style="text-align: center">
-        It is a beloved and essential public space that serves as an escape from the stresses of the City, a place to
-        play, relax, and breathe a little easier.
-      </h6>
-      <div class="app">
-        <button class="btn btn-secondary" onclick="getWeather()">Get the current weather in CENTRAL PARK</button>
+        <h4 style="text-align: center">Central Park is New York City’s 843-acre backyard.</h4>
+        <h6 style="text-align: center">
+            It is a beloved and essential public space that serves as an escape from the stresses of the City, a place to
+            play, relax, and breathe a little easier.
+        </h6>
+        <div class="app">
+            <button class="btn btn-secondary" onclick="getWeather()">Get the current weather in CENTRAL PARK</button>
 
-        <h1 id="temp-main"></h1>
-        <h2 id="condition">Click above</h2>
-      </div>
-      <div id="accordion">
-        <h3>
-          Bethesda Terrace and Fountain
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            The Bethesda Terrace sits at the heart of Central Park and its stunning architecture and amazing views one
-            of the park’s highlights. The open-air arcade is flanked by a grand staircase and is renowned for its
-            colourful ceiling which is comprised of 16,000 patterned tiles.
-          </p>
+            <h1 id="temp-main"></h1>
+            <h2 id="condition">Click above</h2>
         </div>
-        <h3>
-          Shakespeare Garden
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            A haven of peace and tranquillity in Central Park, Shakespeare Garden is designed to represent the English
-            countryside and features hundreds of plants that were mentioned in Shakespeare’s works. It’s a beautiful
-            quiet corner of the park and it’s easy to forget you are even in the city after a few minutes meandering
-            through the paths of Shakespeare Garden!
-          </p>
+        <div id="accordion">
+            <h3>
+                Bethesda Terrace and Fountain
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    The Bethesda Terrace sits at the heart of Central Park and its stunning architecture and amazing views one
+                    of the park’s highlights. The open-air arcade is flanked by a grand staircase and is renowned for its
+                    colourful ceiling which is comprised of 16,000 patterned tiles.
+                </p>
+            </div>
+            <h3>
+                Shakespeare Garden
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    A haven of peace and tranquillity in Central Park, Shakespeare Garden is designed to represent the English
+                    countryside and features hundreds of plants that were mentioned in Shakespeare’s works. It’s a beautiful
+                    quiet corner of the park and it’s easy to forget you are even in the city after a few minutes meandering
+                    through the paths of Shakespeare Garden!
+                </p>
+            </div>
+            <h3>
+                Belvedere Castle
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    A visit to Belvedere Castle is one of the most popular things to do in Central Park and visitors flock to
+                    the whimsical castle with its panoramic views of the Park. The castle is located on Vista Rock and was named
+                    for the Italian ‘Beautiful View’, a fitting name given its stunning views of the Great Lawn and the lush
+                    Central Park woodlands.
+                </p>
+            </div>
+            <h3>
+                Ride a Bike
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    Covering 50 blocks and almost 850 acres, Central Park can only be described as huge! Hopping on a bike is an
+                    amazing way to explore the park from a different perspective and cover as much ground as possible. The Park
+                    Drive cycle loops include a 6.1mile, 5mile and 1.7mile routes and it’s possible to see some of Central
+                    Park’s most iconic sights including Belvedere Castle, Shakespeare Garden and the Loeb Boathouse
+                </p>
+            </div>
+            <h3>
+                Row a Boat
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    One of our favourite things to do in Central Park! A fleet of 100 boats are available to rent at the Loeb
+                    Boathouse and it’s the perfect activity for a sunny New York afternoon. The Lake offers amazing views of the
+                    New York skyline and, at 22 acres, there’s plenty of water to explore! Best of all, the rowboats only cost
+                    $15 an hour, a bargain by New York standards!
+                </p>
+                <p>
+                    If you prefer not to row yourself there are also Venetian Gondola’s which can be rented for a guided tour!
+                </p>
+            </div>
+            <h3>
+                Carousel
+                <img src="dropdown.png" height="20" width="20" />
+            </h3>
+            <div>
+                <p>
+                    The beautiful vintage carousel is a Central Park classic and a $3 ride is a nostalgic step back in time! The
+                    carousel is popular with both adults and children alike and stepping onto one of its retro horses or
+                    carriage can’t fail to bring a smile to your face! This is one of our favourite things to do in Central Park
+                    with kids!
+                </p>
+            </div>
         </div>
-        <h3>
-          Belvedere Castle
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            A visit to Belvedere Castle is one of the most popular things to do in Central Park and visitors flock to
-            the whimsical castle with its panoramic views of the Park. The castle is located on Vista Rock and was named
-            for the Italian ‘Beautiful View’, a fitting name given its stunning views of the Great Lawn and the lush
-            Central Park woodlands.
-          </p>
-        </div>
-        <h3>
-          Ride a Bike
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            Covering 50 blocks and almost 850 acres, Central Park can only be described as huge! Hopping on a bike is an
-            amazing way to explore the park from a different perspective and cover as much ground as possible. The Park
-            Drive cycle loops include a 6.1mile, 5mile and 1.7mile routes and it’s possible to see some of Central
-            Park’s most iconic sights including Belvedere Castle, Shakespeare Garden and the Loeb Boathouse
-          </p>
-        </div>
-        <h3>
-          Row a Boat
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            One of our favourite things to do in Central Park! A fleet of 100 boats are available to rent at the Loeb
-            Boathouse and it’s the perfect activity for a sunny New York afternoon. The Lake offers amazing views of the
-            New York skyline and, at 22 acres, there’s plenty of water to explore! Best of all, the rowboats only cost
-            $15 an hour, a bargain by New York standards!
-          </p>
-          <p>
-            If you prefer not to row yourself there are also Venetian Gondola’s which can be rented for a guided tour!
-          </p>
-        </div>
-        <h3>
-          Carousel
-          <img src="dropdown.png" height="20" width="20" />
-        </h3>
-        <div>
-          <p>
-            The beautiful vintage carousel is a Central Park classic and a $3 ride is a nostalgic step back in time! The
-            carousel is popular with both adults and children alike and stepping onto one of its retro horses or
-            carriage can’t fail to bring a smile to your face! This is one of our favourite things to do in Central Park
-            with kids!
-          </p>
-        </div>
-      </div>
     </div>
     <div></div>
     <!-- Footer -->
     <footer class="text-center fixed-bottom text-lg-start bg-light text-muted">
-      <!-- Copyright -->
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold">ByeByeBoredom</a>
-      </div>
-      <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold">ByeByeBoredom</a>
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 </html>
